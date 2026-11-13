@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>运单影像收件台</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1f6feb" stroke-width="1.8" stroke-linejoin="round"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5z"/><path d="M3 7l9 5 9-5M12 12v10"/></svg></span>
+    <div>
+      <h1>运单影像收件台</h1>
+      <p class="subtitle">扫描件本地识别 · 逐字段复核 · 全部数据仅保存在本机浏览器，不上传任何图片</p>
+    </div>
+  </div>
+  <div class="actions">
+    <input type="file" id="fileInput" accept="image/*" multiple hidden>
+    <button class="btn primary" id="btnImport">导入扫描图片</button>
+    <button class="btn" id="btnDemo">载入演示样本</button>
+    <button class="btn" id="btnExport">导出记录 JSON</button>
+    <button class="btn danger" id="btnClear">清空数据</button>
+  </div>
+</header>
+
+<div class="progress-wrap hidden" id="progressWrap">
+  <div class="progress-text" id="progressText">准备中…</div>
+  <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+</div>
+
+<main class="layout">
+  <aside class="sidebar">
+    <nav class="queue-tabs" id="queueTabs"></nav>
+    <div class="record-list" id="recordList"></div>
+  </aside>
+  <section class="detail" id="detail">
+    <div class="empty-state" id="emptyState">
+      <p>← 从左侧选择一条记录进行复核</p>
+      <p class="muted">或点击「导入扫描图片」/「载入演示样本」开始收件</p>
+    </div>
+    <div class="detail-content hidden" id="detailContent">
+      <div class="detail-header" id="detailHeader"></div>
+      <div class="banner hidden" id="dupBanner"></div>
+      <div class="banner warn hidden" id="warnBanner"></div>
+      <div class="panes">
+        <div class="image-pane">
+          <div class="image-stage" id="imageStage">
+            <img id="recordImage" alt="运单扫描件">
+            <div class="overlay-layer" id="overlayLayer"></div>
+          </div>
+          <div class="image-meta" id="imageMeta"></div>
+        </div>
+        <div class="form-pane">
+          <h3>识别字段 <span class="hint">点击字段可在左图定位文字区域</span></h3>
+          <div id="fieldForm"></div>
+          <div class="form-actions">
+            <button class="btn primary" id="btnConfirm">✓ 确认并生成运单记录</button>
+            <button class="btn hidden" id="btnUnconfirm">撤销确认</button>
+            <button class="btn hidden" id="btnRestore">恢复为待复核</button>
+            <button class="btn danger" id="btnDelete">删除</button>
+          </div>
+          <h3>处理记录</h3>
+          <ul class="history" id="historyList"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="vendor/tesseract.min.js"></script>
+<script src="js/extract.js"></script>
+<script src="js/store.js"></script>
+<script src="js/ocr.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

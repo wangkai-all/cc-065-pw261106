@@ -1,0 +1,25 @@
+{
+  "name": "waybill-desk",
+  "version": "1.0.0",
+  "description": "本地运单影像收件台：浏览器本地 OCR 识别、逐字段复核、重复/修订件管理",
+  "main": "index.js",
+  "scripts": {
+    "start": "python3 -m http.server 8080",
+    "samples": "python3 tools/generate_samples.py",
+    "test": "node test/run_ocr_test.mjs",
+    "test:e2e": "node test/e2e_browser.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@expo-google-fonts/noto-sans-sc": "^0.4.4",
+    "@tesseract.js-data/chi_sim": "^1.0.0",
+    "@tesseract.js-data/eng": "^1.0.0",
+    "tesseract.js": "^7.0.0"
+  },
+  "devDependencies": {
+    "playwright": "^1.65.0"
+  }
+}

@@ -1,0 +1,114 @@
+[
+  {
+    "file": "01-xunda-clean.jpg",
+    "tags": [
+      "clean"
+    ],
+    "expect": {
+      "waybillNo": "YD8801234567",
+      "origin": "上海市浦东新区",
+      "destination": "北京市海淀区",
+      "weight": "12.5",
+      "date": "2026-11-10"
+    },
+    "laplacianVar": 6319.0
+  },
+  {
+    "file": "02-anjie-clean.jpg",
+    "tags": [
+      "clean"
+    ],
+    "expect": {
+      "waybillNo": "AJ6612045381",
+      "origin": "广州市天河区",
+      "destination": "成都市武侯区",
+      "weight": "8.2",
+      "date": "2026-11-09"
+    },
+    "laplacianVar": 5315.9
+  },
+  {
+    "file": "03-huanyu-clean.jpg",
+    "tags": [
+      "clean"
+    ],
+    "expect": {
+      "waybillNo": "HY5508734210",
+      "origin": "深圳市南山区",
+      "destination": "杭州市西湖区",
+      "weight": "23.0",
+      "date": "2026-11-08"
+    },
+    "laplacianVar": 5364.2
+  },
+  {
+    "file": "04-xunda-duplicate.jpg",
+    "tags": [
+      "duplicate_of:YD8801234567"
+    ],
+    "expect": {
+      "waybillNo": "YD8801234567",
+      "origin": "上海市浦东新区",
+      "destination": "北京市海淀区",
+      "weight": "12.5",
+      "date": "2026-11-10"
+    },
+    "laplacianVar": 6246.1
+  },
+  {
+    "file": "05-anjie-revision.jpg",
+    "tags": [
+      "revision_of:AJ6612045381"
+    ],
+    "expect": {
+      "waybillNo": "AJ6612045381",
+      "origin": "广州市天河区",
+      "destination": "成都市武侯区",
+      "weight": "9.6",
+      "date": "2026-11-09"
+    },
+    "laplacianVar": 5314.5
+  },
+  {
+    "file": "06-xunda-blurry.jpg",
+    "tags": [
+      "blurry"
+    ],
+    "expect": {
+      "waybillNo": "YD8809999123",
+      "origin": "南京市鼓楼区",
+      "destination": "武汉市江汉区",
+      "weight": "3.7",
+      "date": "2026-11-11"
+    },
+    "laplacianVar": 495.0
+  },
+  {
+    "file": "07-anjie-missing-weight.jpg",
+    "tags": [
+      "missing:weight"
+    ],
+    "expect": {
+      "waybillNo": "AJ6612000111",
+      "origin": "苏州市姑苏区",
+      "destination": "重庆市渝中区",
+      "weight": "",
+      "date": "2026-11-07"
+    },
+    "laplacianVar": 4586.6
+  },
+  {
+    "file": "08-huanyu-badformat.jpg",
+    "tags": [
+      "bad_format"
+    ],
+    "expect": {
+      "waybillNo": "HY55-08X421",
+      "origin": "长沙市岳麓区",
+      "destination": "天津市和平区",
+      "weight": "15.4",
+      "date": "2026-11-06"
+    },
+    "laplacianVar": 5228.7
+  }
+]

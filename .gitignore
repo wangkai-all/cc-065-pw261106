@@ -31,3 +31,6 @@ test-results/
 *.sqlite3-wal
 *.sqlite3-shm
 *.sqlite3-journal
+
+# 应用自带的运行所需的 OCR 语言包不忽略
+!app/vendor/lang/*.traineddata.gz
